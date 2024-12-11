@@ -15,7 +15,7 @@
     </AndroidResource>
   </ItemGroup>
 
-  <PropertyGroup Condition="'$(AndroidEnableProfiler)'=='True'">
+  <!--<PropertyGroup Condition="'$(AndroidEnableProfiler)'=='True'">
     <IsEmulator Condition="'$(IsEmulator)' == ''">True</IsEmulator>
     <DebugSymbols>True</DebugSymbols>
   </PropertyGroup>
@@ -23,7 +23,7 @@
   <ItemGroup>
     <AndroidEnvironment Condition="'$(IsEmulator)'=='True'" Include="environment.emulator.txt" />
     <AndroidEnvironment Condition="'$(IsEmulator)'!='True'" Include="environment.device.txt" />
-  </ItemGroup>
+  </ItemGroup>-->
 
   <ItemGroup>
     <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.4" />
