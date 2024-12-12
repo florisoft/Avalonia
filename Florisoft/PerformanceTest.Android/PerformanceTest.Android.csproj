@@ -8,7 +8,8 @@
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <AndroidPackageFormat>apk</AndroidPackageFormat>
-    <AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>
+    <!--<AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>-->
+    <AndroidEnableProfiler>true</AndroidEnableProfiler>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +18,10 @@
     </AndroidResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <AndroidEnvironment Include="environment.device.txt" />
+  </ItemGroup>
+  
   <ItemGroup>
     <!--<PackageReference Include="Avalonia.Android" Version="$(AvaloniaVersion)" />-->
     <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.1" />

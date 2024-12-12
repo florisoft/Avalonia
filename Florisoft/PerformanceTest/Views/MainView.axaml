@@ -5,6 +5,7 @@
     xmlns:controls="using:PerformanceTest.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:PerformanceTest.Views"
     xmlns:vm="clr-namespace:PerformanceTest.ViewModels"
     d:DesignHeight="450"
     d:DesignWidth="800"
@@ -18,57 +19,21 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <Grid>
-        <controls:ListBox ItemsSource="{Binding Items}">
-            <ListBox.ItemTemplate>
-                <DataTemplate x:DataType="vm:ItemViewModel">
-                    <Border
-                        Padding="4"
-                        Background="White"
-                        BorderBrush="Gray"
-                        BorderThickness="1"
-                        CornerRadius="4"
-                        ClipToBounds="true">
-                        <Canvas Height="48">
-                            <TextBlock
-                                HorizontalAlignment="Left"
-                                FontSize="10"
-                                Text="{Binding Index}" />
-                            <TextBlock
-                                Canvas.Left="48"
-                                HorizontalAlignment="Left"
-                                FontSize="16"
-                                FontWeight="Bold"
-                                Text="{Binding Title}" />
-                            <TextBlock
-                                Canvas.Left="120"
-                                HorizontalAlignment="Left"
-                                FontSize="16"
-                                FontWeight="Bold"
-                                Text="{Binding Title}" />
-                            <TextBlock
-                                Canvas.Left="192"
-                                HorizontalAlignment="Left"
-                                FontSize="16"
-                                FontWeight="Bold"
-                                Text="{Binding Title}" />
-                            <TextBlock
-                                Canvas.Left="264"
-                                Background="LightGray"
-                                HorizontalAlignment="Stretch"
-                                FontSize="16"
-                                FontWeight="Bold"
-                                Text="{Binding Title}"
-                                TextTrimming="CharacterEllipsis" />
-                            <TextBlock Canvas.Top="24" Text="{Binding Description}" />
-                            <TextBlock
-                                Canvas.Left="150"
-                                Canvas.Top="24"
-                                Text="{Binding Description}" />
-                        </Canvas>
-                    </Border>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </controls:ListBox>
+    <Grid RowDefinitions="40, *">
+        <Panel Grid.Row="0">
+            <Border
+                Background="White"
+                BorderBrush="Gray"
+                BorderThickness="0,0,0,1">
+                <TextBlock
+                    x:Name="title"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    Text="Main View" />
+            </Border>
+        </Panel>
+        <!--<views:ParcelLookupView Grid.Row="1" />-->
+        <controls:PageContainer x:Name="page_container" Grid.Row="1" />
     </Grid>
 </UserControl>

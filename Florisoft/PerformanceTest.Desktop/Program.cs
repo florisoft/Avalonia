@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Avalonia;
+using Avalonia.Vulkan;
 
 namespace PerformanceTest.Desktop;
 
@@ -17,6 +18,14 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
+                .With(new Win32PlatformOptions() { RenderingMode = new[] { Win32RenderingMode.Vulkan } })
+                .With(new VulkanOptions()
+                {
+                    VulkanInstanceCreationOptions = new VulkanInstanceCreationOptions()
+                    {
+                        UseDebug = false,
+                    }
+                })
             .WithInterFont()
             .LogToTrace();
 
