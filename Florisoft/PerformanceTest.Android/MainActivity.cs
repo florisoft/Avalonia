@@ -18,14 +18,14 @@ public class MainActivity : AvaloniaMainActivity<App>
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
         return base.CustomizeAppBuilder(builder)
-                .With(new AndroidPlatformOptions() { RenderingMode = new[] { AndroidRenderingMode.Vulkan } })
-                .With(new VulkanOptions()
-                {
-                    VulkanInstanceCreationOptions = new VulkanInstanceCreationOptions()
-                    {
-                        UseDebug = false,
-                    }
-                })
+                //.With(new AndroidPlatformOptions() { RenderingMode = new[] { AndroidRenderingMode.Vulkan } })
+                //.With(new VulkanOptions()
+                //{
+                //    VulkanInstanceCreationOptions = new VulkanInstanceCreationOptions()
+                //    {
+                //        UseDebug = false,
+                //    }
+                //})
             .WithInterFont();
     }
 }
